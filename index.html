@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Depression Risk Detector - Facial Analysis</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/face-landmarks-detection@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/face-expression-recognition"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🧠 Depression Risk Detector</h1>
+            <p>AI-powered facial emotion analysis for mental health awareness</p>
+        </div>
+
+        <div class="video-container">
+            <video id="video" autoplay muted playsinline></video>
+            <canvas id="overlay" class="canvas-overlay"></canvas>
+        </div>
+
+        <div class="loading" id="loading">Loading AI models...</div>
+
+        <div class="controls">
+            <button class="btn btn-primary" id="startBtn">Start Analysis</button>
+            <button class="btn btn-secondary" id="stopBtn" disabled>Stop</button>
+            <button class="btn btn-secondary" id="resetBtn">Reset</button>
+        </div>
+
+        <div class="results" id="results">
+            <h3>📊 Real-time Emotion Analysis</h3>
+            <div class="emotion-display" id="emotionDisplay"></div>
+            
+            <div class="risk-indicator">
+                <div class="risk-level" id="riskLevel">Analyzing...</div>
+                <div id="riskScore">0%</div>
+            </div>
+            
+            <div id="recommendations"></div>
+        </div>
+
+        <div class="disclaimer">
+            <strong>⚠️ Important Disclaimer:</strong> This tool provides general insights based on facial expressions and is 
+            <strong>NOT</strong> a medical diagnosis. Please consult a healthcare professional for proper mental health assessment.
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
